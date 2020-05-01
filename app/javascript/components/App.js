@@ -1,18 +1,18 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Hello from './Hello'
 
-
-const Hello = props => (
-  <div>Hello {props.name}!</div>
-)
-
-Hello.defaultProps = {
-  name: 'World'
+class App extends React.Component {
+  render () {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' render={() => ('Home!')}/>
+          <Route path='/hello' render={() => <Hello />}/>
+        </Switch>
+      </BrowserRouter>
+    )
+  }
 }
 
-Hello.propTypes = {
-  name: PropTypes.string
-}
-
-export default Hello
+export default App
