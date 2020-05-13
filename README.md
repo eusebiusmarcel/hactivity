@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version: 2.7.1
+Rails version: 6.0.2.2
+Database: postgresql
 
-Things you may want to cover:
+## Table of Contents:
+- [Description](#description)
+- [Dependencies](#dependencies)
+- [How to install apps](#how-to-install-apps)
+- [Running the server](#running-the-server)
+- [Directory's structure](#directory's-structure)
 
-* Ruby version
+## Description:
+This is a side-free-project of Eusebius Marcel (front-end) and Kharisma Putra (back-end). We implement monolith structure. Inside Rails, we use React JS for front-end.
 
-* System dependencies
+## Dependencies:
+- Postgresql > 9.4 (dev used 9.5.19)
 
-* Configuration
+## How to install apps:
 
-* Database creation
+## Running the server:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Directory's structure:

@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   end
   # Forward root to StaticController#index
   root 'static#index'
+
+  namespace :api do
+    post 'user', to: 'users#create'
+    post 'login', to: 'users#authenticate'
+  end
 end
