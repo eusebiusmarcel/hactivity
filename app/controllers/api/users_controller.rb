@@ -1,12 +1,14 @@
 class Api::UsersController < Api::ApiController
+  before_action :authorize_request, except: %i[create authenticate]
+
   def create
     User.create!(user_params)
-    render json: { status: "OK", message: "Pendaftaran berhasil" }, status: 201
+    render json: { status: 'OK', message: 'Pendaftaran berhasil' }, status: 201
   end
 
   def authenticate
     auth_token = Auth::AuthenticateUser.new(auth_params[:email], auth_params[:password]).call_user
-    render json: { status: "OK", message: auth_token }, status: 200
+    render json: { status: 'OK', message: auth_token }, status: 200
   end
 
   private
