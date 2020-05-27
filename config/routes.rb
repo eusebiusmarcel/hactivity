@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   namespace :api do
     post 'user', to: 'users#create'
     post 'login', to: 'users#authenticate'
+
+    post 'activity', to: 'activities#create'
   end
 end
