@@ -2,8 +2,9 @@ class Api::ActivitiesController < Api::ApiController
   before_action :set_activity, except: %i[index create]
   def index
     activities = current_user.activities
-    activities = activities.where(start_at: params[:from_date]..params[:to_date]) unless params[:from_date].nil? && params[:to_date].nil?
-    render json: { object: activities }
+                             .start_end_between(params[:from_date], params[:to_date])
+                             .ordered_by_start_at
+    render json: { object: activities }, status: 200
   end
 
   def create
