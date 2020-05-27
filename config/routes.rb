@@ -14,6 +14,6 @@ Rails.application.routes.draw do
     post 'user', to: 'users#create'
     post 'login', to: 'users#authenticate'
 
-    post 'activity', to: 'activities#create'
+    resources :activity, controller: 'activities', only: %i[index create show update destroy]
   end
 end
